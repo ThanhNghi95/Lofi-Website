@@ -1,7 +1,12 @@
+import './Home.scss'
 const Home = () => {
     return ( 
-    <div>
-    </div> 
+    <>
+        <img src="/assets/img/japan.jpg" 
+        alt="" 
+        className='background'
+        />
+    </> 
     );
 }
  

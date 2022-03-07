@@ -1,16 +1,27 @@
 import { Link } from "react-router-dom";
-import {signInWithGoogle} from '../../firebase'
+import { AiOutlineExclamation } from "@react-icons/all-files/ai/AiOutlineExclamation";
+import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
+import './Header.scss';
 const Header = () => {
     return ( 
-        <nav>
-
-            <button onClick={signInWithGoogle}>Sign in with google</button>
-            <h1>{localStorage.getItem("name")}</h1>
-            <h1>{localStorage.getItem("email")}</h1>
-            <img src={localStorage.getItem("photoURL")} alt="" />
-            {/* <Link to='/'>
-                
-            </Link> */}
+        <nav className="wrap">
+            <Link to='/'>
+                <img src="/assets/img/icon.gif" alt="" className="logo" />
+            </Link>
+            <div className="menu">
+                <Link to='/about'>
+                    <AiOutlineExclamation/>
+                    <span>What is this project</span>
+                </Link>
+                <a 
+                    href="https://github.com/nghilethanh2000"
+                    target="_blank"
+                    rel='noreferrer'
+                >
+                    <AiFillGithub/>
+                    <span>Github</span>
+                </a>
+            </div>
         </nav>
      );
 }
