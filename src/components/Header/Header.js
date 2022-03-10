@@ -8,11 +8,11 @@ const Header = () => {
     return ( 
         <nav className="wrap">
             <Link to='/'>
-                <img src="/assets/img/Lofi.gif" alt="" className="logo" />
+                <img src="/assets/img/Header.gif" alt="" className="logo" />
             </Link>
             <div className="menu">
                 <Link to='/about'>
-                    <AiOutlineExclamation/>
+                    <AiOutlineExclamation className="github"/>
                     <span>What is this project</span>
                 </Link>
                 <a 
