@@ -10,12 +10,11 @@
 
     .logo{
         margin:0px 30px ;
-        width: 15%;
+        width: 20%;
     }
-
-   .menu{
+    .menu{
     display: flex;
-    margin: 10px 30px;
+    margin: 10px 20px;
     a {
         display: flex;
         align-items: center;
@@ -23,6 +22,11 @@
         text-decoration: none;
         color: #fff;
         padding: 0 20px;
+
+        .github{
+          width: 40px;
+          height: 40px;
+        }
         span {
             font-size: 16px;
             letter-spacing: 1.5px;
@@ -30,7 +34,6 @@
             padding: 0 8px;
         
             &:after {
-
               content: '';
               height: 2px;
               background: white;
@@ -51,7 +54,9 @@
             }
           }
    }
- 
+   .fullscreen{
+     color: #fff;
+   }
 
 }
 }

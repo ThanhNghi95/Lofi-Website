@@ -11,11 +11,11 @@
   transition: opacity 1s;
   animation: color-change 2s linear infinite;
 }
-@keyframes color-change {
-    0%,100%{
-      filter: hue-rotate(0deg) ;
-    }
-    50%{
-      filter: hue-rotate(360deg) ;
-    }
-}
+// @keyframes color-change {
+//     0%,100%{
+//       filter: hue-rotate(0deg) ;
+//     }
+//     50%{
+//       filter: hue-rotate(360deg) ;
+//     }
+// }
