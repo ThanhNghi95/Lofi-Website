@@ -13,7 +13,7 @@ const Header = () => {
             <div className="menu">
                 <Link to='/about'>
                     <AiOutlineExclamation className="github"/>
-                    <span>What is this project</span>
+                    <span>About this project</span>
                 </Link>
                 <a 
                     href="https://github.com/nghilethanh2000"
