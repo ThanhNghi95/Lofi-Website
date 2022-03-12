@@ -26,8 +26,7 @@ const Header = () => {
             </div>
             <div className="menu">
                 <LightSwitch/>
-                <BsArrowsFullscreen className="fullscreen"/>
-
+                {/* <BsArrowsFullscreen className="fullscreen"/> */}
             </div>
         </nav>
      );
