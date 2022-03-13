@@ -1,5 +1,6 @@
 const initState = {
-    mode:'normal'
+    mode:'normal',
+
 }
 
 const LightSwitchMode = (state=initState, action) =>{

@@ -1,8 +1,9 @@
 import './Home.scss'
 import { useSelector } from 'react-redux'
+import RainSwitch from '../RainSwitch/RainSwitch'
 const Home = () => {
-    const mode = useSelector((state)=>state.LightSwitchModeState)
-    const background = mode.mode
+    const lightMode = useSelector((state)=>state.LightSwitchModeState)
+    const background = lightMode.mode
     console.log(background)
     return ( 
     <>  
@@ -14,7 +15,7 @@ const Home = () => {
         {/* Light - CLear */}
         {/* Normal - Rain */}
         {/* Light - Rain */}
-       
+       <RainSwitch/>
     </> 
     );
 }

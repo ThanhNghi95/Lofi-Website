@@ -15,13 +15,13 @@
 }
 .light{
   @include  background();
-  animation: color-change 2s linear infinite;
+  animation: color-change 1.5s linear infinite;
 }
 @keyframes color-change {
     0%,100%{
       filter: hue-rotate(0deg) ;
     }
     50%{
-      filter: hue-rotate(360deg) ;
+      filter: hue-rotate(180deg) ;
     }
 }

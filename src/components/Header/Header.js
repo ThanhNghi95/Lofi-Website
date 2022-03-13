@@ -8,14 +8,14 @@ import { LightSwitchMode } from "../../redux/actions/action";
 import './Header.scss';
 
 const Header = () => {
-    const mode = useSelector((state)=>state.LightSwitchModeState)
+    const lightMode = useSelector((state)=>state.LightSwitchModeState)
 
     const dispatch = useDispatch()
     const handleLightSwitch = () =>{
         let status
-        if(mode.mode === 'normal'){
+        if(lightMode.mode === 'normal'){
             status = 'light'
-        }else if(mode.mode ==='light'){
+        }else if(lightMode.mode ==='light'){
             status ='normal'
         }
         dispatch(LightSwitchMode(status) )
