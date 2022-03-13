@@ -2,7 +2,7 @@ import LightSwitch from "../LightSwitch/LightSwitch";
 import { Link } from "react-router-dom";
 import { AiOutlineExclamation } from "@react-icons/all-files/ai/AiOutlineExclamation";
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
-// import {BsArrowsFullscreen} from "@react-icons/all-files/bs/BsArrowsFullscreen"
+import {BsArrowsFullscreen} from "@react-icons/all-files/bs/BsArrowsFullscreen"
 import { useSelector , useDispatch } from "react-redux";
 import { LightSwitchMode } from "../../redux/actions/action";
 import './Header.scss';
@@ -33,7 +33,7 @@ const Header = () => {
                     <span>About this project</span>
                 </Link>
                 <a 
-                    href="https://github.com/nghilethanh2000"
+                    href="https://github.com/thanhnghi95"
                     target="_blank"
                     rel='noreferrer'
                 >
@@ -42,12 +42,11 @@ const Header = () => {
                 </a>
             </div>
             <div className="menu">
-                <div onClick={handleLightSwitch}>
+                <div onClick={handleLightSwitch} className="lightBox">
                     <LightSwitch/>
                 </div>
-              
-                {/* <BsArrowsFullscreen className="fullscreen"/> */}
-            </div>
+                <BsArrowsFullscreen className="fullscreen"/>
+           </div>
         </nav>
      );
 }

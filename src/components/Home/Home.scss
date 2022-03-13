@@ -1,5 +1,4 @@
-
-@mixin normal(){
+@mixin background(){
   z-index: 1;
   object-fit: cover;
   position: absolute;
@@ -12,10 +11,10 @@
 
 }
 .normal {
-  @include normal()
+  @include  background()
 }
 .light{
-  @include normal();
+  @include  background();
   animation: color-change 2s linear infinite;
 }
 @keyframes color-change {

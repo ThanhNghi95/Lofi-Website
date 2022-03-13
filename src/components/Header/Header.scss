@@ -15,7 +15,8 @@
     .menu{
     display: flex;
     margin: 10px 100px;
-    a {
+  
+    a{
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -28,7 +29,7 @@
           height: 40px;
         }
         span {
-            font-size: 20px;
+            font-size: 15px;
             letter-spacing: 1.5px;
             position: relative;
             padding: 0 8px;
@@ -54,9 +55,14 @@
             }
           }
    }
-   .fullscreen{
-     color: #fff;
+   .lightBox{
+     margin: 0px 30px;
    }
+   .fullscreen{
+    color: #fff;
+    margin: auto auto;
+    cursor: pointer;
+   }  
 
 }
 }
