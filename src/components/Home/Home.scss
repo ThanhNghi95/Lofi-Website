@@ -1,5 +1,5 @@
 
-.background{
+@mixin normal(){
   z-index: 1;
   object-fit: cover;
   position: absolute;
@@ -9,13 +9,20 @@
   height: 100%;
   opacity: 1;
   transition: opacity 1s;
+
+}
+.normal {
+  @include normal()
+}
+.light{
+  @include normal();
   animation: color-change 2s linear infinite;
 }
-// @keyframes color-change {
-//     0%,100%{
-//       filter: hue-rotate(0deg) ;
-//     }
-//     50%{
-//       filter: hue-rotate(360deg) ;
-//     }
-// }
+@keyframes color-change {
+    0%,100%{
+      filter: hue-rotate(0deg) ;
+    }
+    50%{
+      filter: hue-rotate(360deg) ;
+    }
+}

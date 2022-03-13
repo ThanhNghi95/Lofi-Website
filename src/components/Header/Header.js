@@ -2,9 +2,26 @@ import LightSwitch from "../LightSwitch/LightSwitch";
 import { Link } from "react-router-dom";
 import { AiOutlineExclamation } from "@react-icons/all-files/ai/AiOutlineExclamation";
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
-import {BsArrowsFullscreen} from "@react-icons/all-files/bs/BsArrowsFullscreen"
+// import {BsArrowsFullscreen} from "@react-icons/all-files/bs/BsArrowsFullscreen"
+import { useSelector , useDispatch } from "react-redux";
+import { LightSwitchMode } from "../../redux/actions/action";
 import './Header.scss';
+
 const Header = () => {
+    const mode = useSelector((state)=>state.LightSwitchModeState)
+
+    const dispatch = useDispatch()
+    const handleLightSwitch = () =>{
+        let status
+        if(mode.mode === 'normal'){
+            status = 'light'
+        }else if(mode.mode ==='light'){
+            status ='normal'
+        }
+        dispatch(LightSwitchMode(status) )
+    }
+
+  
     return ( 
         <nav className="wrap">
             <Link to='/'>
@@ -25,7 +42,10 @@ const Header = () => {
                 </a>
             </div>
             <div className="menu">
-                <LightSwitch/>
+                <div onClick={handleLightSwitch}>
+                    <LightSwitch/>
+                </div>
+              
                 {/* <BsArrowsFullscreen className="fullscreen"/> */}
             </div>
         </nav>
