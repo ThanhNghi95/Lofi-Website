@@ -1,6 +1,6 @@
 const initState = {
     rain:'clear',
-    sound:false
+    sound:0
 }
 export const RainMode = (state = initState , action) =>{
     switch(action.type){
