@@ -12,7 +12,7 @@ const RainSwitch = () => {
     const handleSetRain = () =>{
         switch(rainMode.rain){
             case 'clear':
-                dispatch(RainMode('rain', 30))
+                dispatch(RainMode('rain', 50))
                 break
             case 'rain':
                 dispatch(RainMode('clear', 0))
@@ -27,7 +27,7 @@ const RainSwitch = () => {
         <div className='container' onClick={handleSetRain}>
             {audio && 
             <ReactAudioPlayer
-                src='./assets/audio/rain.mp4'
+                src='./assets/audio/Rain.mp3'
                 autoPlay
                 loop={true}
                 volume={rainMode.sound / 100}
