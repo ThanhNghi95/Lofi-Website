@@ -3,7 +3,6 @@ import { RainMode} from "../../redux/actions/action";
 import { useDispatch, useSelector } from 'react-redux';
 import ReactAudioPlayer from 'react-audio-player';
 import { useState } from 'react';
-import  {FaCloudRain}  from "@react-icons/all-files/fa/FaCloudRain";
 
 const RainSwitch = () => {
     const dispatch = useDispatch()
@@ -21,8 +20,7 @@ const RainSwitch = () => {
                 dispatch(RainMode('clear', 0))
             }
         setAudio(!audio)
-        }
-    console.log(audio)    
+        } 
     return (
         <div className='container' onClick={handleSetRain}>
             {audio && 
@@ -33,9 +31,7 @@ const RainSwitch = () => {
                 volume={rainMode.sound / 100}
             />
             }
-                <FaCloudRain
-                    className='rainIcon'
-                />
+                <img src="/assets/img/cry.gif" alt="" className='rainIcon'/>
         </div>
       );
 }
