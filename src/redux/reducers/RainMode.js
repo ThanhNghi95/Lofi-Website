@@ -1,6 +1,7 @@
 const initState = {
     rain:'clear',
-    sound:0
+    sound:0,
+    audio:false
 }
 export const RainMode = (state = initState , action) =>{
     switch(action.type){
@@ -8,7 +9,8 @@ export const RainMode = (state = initState , action) =>{
             return{
                 ...state,
                 rain:action.rain,
-                sound:action.sound
+                sound:action.sound,
+                audio:action.audio
             }
         default:
             return state

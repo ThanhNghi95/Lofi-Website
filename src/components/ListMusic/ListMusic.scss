@@ -1,27 +1,8 @@
 .ListMusic{
     position: absolute;
-    width: 550px;
     height: 100%;
     left: 0%;
     transform: translateX(0%);
     display: flex;
     z-index: 100;
-    .buttonMusic{
-        top:50%;
-        transform: translateY(-50%);
-        position: absolute;
-    }
-   .drawer{
-        position: absolute;
-        right: 0%;
-        width: 80%;
-        top:50%;
-        transform: translateY(-50%);
-        height: 50%;
-        transition: 2s all ease;
-        z-index: 1000;
-
-
-    }
-   
 }

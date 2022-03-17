@@ -1,0 +1,32 @@
+export const musics = [
+    {   
+        id:0,
+        name:'Keshi',
+        image:'./assets/img/keshi.jpg',
+        listMusic:[
+            {
+                id:0,
+                src:'./assets/music/Keshi/always.mp4',
+            },
+            {
+                id:1,
+                src:'./assets/music/Keshi/drunk.mp4',
+            },
+            {
+                id:2,
+                src:'./assets/music/Keshi/somebody.mp4',
+            }
+        ]
+    },
+    {
+        id:1,
+        name:'XXXTenaction',
+        image:'./assets/img/xxxtenaction.png'
+    },
+    {
+        id:2,
+        name:'Vũ',
+        image:'./assets/img/vũ.jpg'
+
+    },
+]

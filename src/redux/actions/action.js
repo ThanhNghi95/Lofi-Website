@@ -4,8 +4,9 @@ export const LightSwitchMode = (payload) =>({
     mode: payload
 })
 
-export const RainMode = (rain , sound) =>({
+export const RainMode = (rain , sound, audio) =>({
     type: 'SET_RAIN',
     rain: rain,
-    sound:sound
+    sound:sound,
+    audio:audio
 })

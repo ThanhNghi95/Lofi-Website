@@ -8,7 +8,7 @@ const Home = () => {
     const background = lightMode.mode
     const rain = rainMode.rain
     return ( 
-    <>  
+    <>   
         <img src="/assets/img/japan.jpg" 
         alt="" 
         className={background}
