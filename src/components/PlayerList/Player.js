@@ -144,7 +144,7 @@ const Playlist = ({avatar , box , setBox}) => {
         }
         {play && 
                     <ReactAudioPlayer
-                            src="https://www.youtube.com/watch?v=J7eYhM6wXPo"
+                            src={avatar.ListMusic[currentMusic].src}
                             loop={true}
                             autoPlay
                             
