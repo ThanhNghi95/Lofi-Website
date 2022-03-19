@@ -10,7 +10,7 @@ const RainSwitch = () => {
     const handleSetRain = () =>{
         switch(rainMode.rain){
             case 'clear':
-                dispatch(RainMode('rain', 50,true))
+                dispatch(RainMode('rain', 20,true))
                 break
             case 'rain':
                 dispatch(RainMode('clear', 0,false))

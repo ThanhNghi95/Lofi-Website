@@ -11,8 +11,6 @@ const Artist = ({ music}) => {
         <>
             <Avatar alt={music.name} src={music.image}
             />
-            
-            
         </>
       );
 }

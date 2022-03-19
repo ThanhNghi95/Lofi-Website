@@ -33,7 +33,7 @@ const ListMusic = () => {
                     />}
                 ariaLabel="List of Artist"
                 sx={{ position: 'absolute', top: '50%', left: '0%' , transform:'translateY(-50%)' }}
-                direction="right"
+                direction="down"
                 delay={1.5}
   
            >
@@ -48,10 +48,12 @@ const ListMusic = () => {
             ))}
             </SpeedDial>
             {avatars.map( (avatar)=>(  
-                   box ===avatar.id && 
+                   box === avatar.id && 
                    <Playlist
                         key={avatar.id}
                         avatar={avatar}
+                        box={box}
+                        setBox={setBox}
                     />
             ))}
         </div>
