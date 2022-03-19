@@ -9,10 +9,11 @@ const Home = () => {
     const rain = rainMode.rain
     return ( 
     <>   
-        <img src="/assets/img/japan.jpg" 
+        {/* <img src="/assets/img/japan.jpg" 
         alt="" 
         className={background}
-        />
+        /> */}
+        <video src="/assets/audio/Vũ.mp3" 	autoPlay className={background}/>
         <div className={rain}></div>
         <RainSwitch/>
         <ListMusic/>

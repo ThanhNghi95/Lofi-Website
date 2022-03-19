@@ -6,15 +6,21 @@ export const musics = [
         listMusic:[
             {
                 id:0,
-                src:'./assets/music/Keshi/always.mp4',
+                src:'./assets/music/Keshi/always.mp3',
+                name:'Always',
+                image:'./assets/music/Keshi/always.jpg'
             },
             {
                 id:1,
-                src:'./assets/music/Keshi/drunk.mp4',
+                src:'./assets/music/Keshi/drunk.mp3',
+                name:'Drunk',
+                image:'./assets/music/Keshi/drunk.jpg'
             },
             {
                 id:2,
-                src:'./assets/music/Keshi/somebody.mp4',
+                src:'./assets/music/Keshi/somebody.mp3',
+                name:'Somebody',
+                image:'./assets/music/Keshi/somebody.jpg'
             }
         ]
     },

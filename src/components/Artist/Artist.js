@@ -1,9 +1,18 @@
-import {Avatar } from "@mui/material";
-const Artist = ({ name, image , listMusic}) => {
-    console.log(listMusic)
+import {Avatar
+  
+} 
+ from "@mui/material";
+
+
+
+const Artist = ({ music}) => {
+   
     return (
         <>
-            <Avatar alt={name} src={image} />
+            <Avatar alt={music.name} src={music.image}
+            />
+            
+            
         </>
       );
 }
