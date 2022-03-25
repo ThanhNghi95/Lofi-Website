@@ -5,6 +5,8 @@ import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import {BsArrowsFullscreen} from "@react-icons/all-files/bs/BsArrowsFullscreen"
 import { useSelector , useDispatch } from "react-redux";
 import { LightSwitchMode } from "../../redux/actions/action";
+import PersonIcon from '@mui/icons-material/Person';
+import { Button } from "@mui/material";
 import './Header.scss';
 
 const Header = () => {
@@ -47,6 +49,7 @@ const Header = () => {
                 </div>
                 <BsArrowsFullscreen className="fullscreen"/>
            </div>
+         
         </nav>
      );
 }

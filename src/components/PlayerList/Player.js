@@ -39,11 +39,17 @@ const Playlist = ({avatar , box , setBox}) => {
         }
         
     }
-
+    const handleAutoPlay =() =>{
+        if(currentMusic === avatar.ListMusic.length-1){
+            setCurrentMusic(0)
+        }else{
+            setCurrentMusic(currentMusic+1)
+        }
+    }
     return (
         <>
-            {!minus && 
-                <Box
+        {!minus ? 
+            <Box
                 sx={{
                     width: 350,
                     background: "#7258AF",
@@ -59,65 +65,64 @@ const Playlist = ({avatar , box , setBox}) => {
                 }}
             >
         
-            <Box
-                sx={{
-                    justifyContent:'center',
-                    alignItems:'center',
-                    textAlign:'center',
-                }}
-            >
                 <Box
                     sx={{
-                        display:'flex',
-                        justifyContent:'space-between',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        textAlign:'center',
                     }}
                 >
-                    <Button
-                        startIcon={<RemoveIcon sx={{color:'#fff'}}/>}
-                        onClick={()=>setMinus(!minus)}
+                    <Box
+                        sx={{
+                            display:'flex',
+                            justifyContent:'space-between',
+                        }}
+                    >
+                        <Button
+                            startIcon={<RemoveIcon sx={{color:'#fff'}}/>}
+                            onClick={()=>setMinus(!minus)}
+                        />
+                        <Button
+                            startIcon={<CloseIcon sx={{color:'#fff'}}/>}
+                            onClick={()=>setBox(!box)}
+                        />
+                    </Box>
+                    <Box>
+                    <Avatar 
+                        src={avatar.ListMusic[currentMusic].image} 
+                        variant="rounded"
+                        sx={{
+                            display:'inline',
+                            objectFit:'cover'
+                        }}
                     />
-                    <Button
-                        startIcon={<CloseIcon sx={{color:'#fff'}}/>}
-                        onClick={()=>setBox(!box)}
-                    />
+                    <Typography
+                        variant="h5"
+                        color="#fff"
+                    >
+                        {avatar.ListMusic[currentMusic].name}
+                    </Typography>
+                    </Box>
                 </Box>
                 <Box>
-                <Avatar 
-                    src={avatar.ListMusic[currentMusic].image} 
-                    variant="rounded"
-                    sx={{
-                        display:'inline',
-                        objectFit:'cover'
-                    }}
-                />
-                <Typography
-                    variant="h5"
-                    color="#fff"
-                >
-                    {avatar.ListMusic[currentMusic].name}
-                </Typography>
+                    <ButtonGroup size="large" variant='string'>
+                        <Button
+                            onClick={handlePreviousMusic}
+                            startIcon={<SkipPreviousIcon sx={{color:'#fff'}}/>}
+                        />
+                        <Button 
+                            onClick={handlePlay}
+                            startIcon={play ? <PauseCircleIcon sx={{color:'#fff'}}/> : <PlayCircleOutlineIcon sx={{color:'#fff'}}/>}
+                        />
+                        <Button
+                            onClick={handleNextMusic}
+                            startIcon={<SkipNextIcon sx={{color:'#fff'}}/>}
+                        />
+                    </ButtonGroup>
+                
                 </Box>
             </Box>
-            <Box>
-                <ButtonGroup size="large" variant='string'>
-                    <Button
-                        onClick={handlePreviousMusic}
-                        startIcon={<SkipPreviousIcon sx={{color:'#fff'}}/>}
-                    />
-                    <Button 
-                        onClick={handlePlay}
-                        startIcon={play ? <PauseCircleIcon sx={{color:'#fff'}}/> : <PlayCircleOutlineIcon sx={{color:'#fff'}}/>}
-                    />
-                    <Button
-                        onClick={handleNextMusic}
-                        startIcon={<SkipNextIcon sx={{color:'#fff'}}/>}
-                    />
-                </ButtonGroup>
-              
-            </Box>
-            </Box>
-        }
-            {minus &&
+        :
                 <Box
                     sx={{
                         position:'absolute',
@@ -145,10 +150,10 @@ const Playlist = ({avatar , box , setBox}) => {
         {play && 
                     <ReactAudioPlayer
                             src={avatar.ListMusic[currentMusic].src}
-                            loop={true}
                             autoPlay
+                            onEnded={handleAutoPlay}
+                    />    
                             
-                    />
                 }
         </>
     );
