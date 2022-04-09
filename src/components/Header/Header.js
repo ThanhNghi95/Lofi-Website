@@ -54,7 +54,21 @@ const Header = ({info}) => {
         }
         dispatch(LightSwitchMode(status) )
     }
-  
+
+    const [fullscreen , setFullScreen] = useState(false);
+    const handleFullscreen = () =>{
+        if(!fullscreen){
+            setFullScreen(true);
+            const e = document.documentElement;
+            e.requestFullscreen();
+        }else{
+            setFullScreen(false);
+            if(!document.exitFullscreen()){
+                document.exitFullscreen()
+            }
+        }
+        
+    }
   
     return ( 
         <nav className="wrap">
@@ -79,7 +93,7 @@ const Header = ({info}) => {
                 <div onClick={handleLightSwitch} className="lightBox">
                     <LightSwitch/>
                 </div>
-                <BsArrowsFullscreen className="fullscreen"/>
+                <BsArrowsFullscreen className="fullscreen" onClick={handleFullscreen}/>
            </div>
            <div className="menu">
                 {info.name== null ?

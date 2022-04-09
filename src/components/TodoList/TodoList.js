@@ -9,6 +9,7 @@ import { useState } from 'react';
 import './TodoList.scss'
 const TodoList = ({info}) => {
     const [open, setOpen] = useState(false);
+    // const [todoBox , setTodoBox] = useState(false)
     return (
         <>
         {
@@ -16,17 +17,24 @@ const TodoList = ({info}) => {
             <div    
                 className='todoList'
             >
-                <Button onClick={()=>setOpen(!open)}>
+                <Button  onClick= {
+                                    ()=>{
+                                        setOpen(!open)
+                                        setTimeout( ()=>{
+                                            setOpen(false)
+                                        },5000)
+                                    }
+                                }
+                    >
                     <ListAltIcon
                         sx={{width:50, height:50 , color:'#4E5054'}}
                     />
                      <Backdrop
                         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
                         open={open}
-                        onClick={()=>setOpen(!open)}
                     >
                         <CircularProgress color="inherit" />
-                        <Typography>This function is in progress</Typography>
+                        <Typography>Your Todo List will be created soon</Typography>
                     </Backdrop>
                 </Button>
                 
