@@ -5,13 +5,45 @@ import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import {BsArrowsFullscreen} from "@react-icons/all-files/bs/BsArrowsFullscreen"
 import { useSelector , useDispatch } from "react-redux";
 import { LightSwitchMode } from "../../redux/actions/action";
-import PersonIcon from '@mui/icons-material/Person';
-import { Button } from "@mui/material";
+
+import LogoutIcon from '@mui/icons-material/Logout';
+import { Avatar, Button, Typography,Box } from "@mui/material";
+
+import {useState} from 'react'
+
+
+import { auth, provider } from '../../firebase';
+import { signInWithPopup} from "firebase/auth"
+
 import './Header.scss';
 
-const Header = () => {
-    const lightMode = useSelector((state)=>state.LightSwitchModeState)
+const Header = ({info}) => {
 
+    const [logOutBox,setLogOutBox] = useState(false)
+    
+  
+    const signInWithGoogle = () =>{
+        signInWithPopup(auth,provider)
+          .then((res)=>{
+            const user = res.user
+            localStorage.setItem('name',user.displayName)
+            localStorage.setItem('email',user.email )
+            localStorage.setItem('photoURL',user.photoURL )
+            window.location.reload(false);
+        })
+          .catch((error)=>{
+          console.log(error)
+        })
+      }
+
+    const handleLogOut = () =>{
+        localStorage.removeItem('name')
+        localStorage.removeItem('email')
+        localStorage.removeItem('photoURL')
+        window.location.reload(false);
+    }
+
+    const lightMode = useSelector( (state) => state.LightSwitchModeState )
     const dispatch = useDispatch()
     const handleLightSwitch = () =>{
         let status
@@ -22,7 +54,7 @@ const Header = () => {
         }
         dispatch(LightSwitchMode(status) )
     }
-
+  
   
     return ( 
         <nav className="wrap">
@@ -49,7 +81,46 @@ const Header = () => {
                 </div>
                 <BsArrowsFullscreen className="fullscreen"/>
            </div>
-         
+           <div className="menu">
+                {info.name== null ?
+                    <Button onClick={signInWithGoogle}>
+                    <Typography variant="button" gutterBottom component="div" sx={{color:'#fff' ,fonSize: 15,letterSpacing: 1.5}}>
+                        Login
+                    </Typography>
+                </Button>
+                :
+                <>
+                <Button onClick={()=>setLogOutBox(!logOutBox)}>
+                    <Avatar src={info.photoURL} alt={info.name} />
+                </Button>
+                {
+                    logOutBox &&
+                    <Box
+                    sx={{
+                        position:'absolute',
+                        top:50,
+                        right:200,
+                        width: 200,
+                        height: 50,
+                        opacity: [0.9, 0.8, 0.7],
+                    }}
+                    >
+                        <Button 
+                            sx={{color:'#000'}} 
+                            onClick={handleLogOut}
+                            startIcon= {<LogoutIcon/>}
+                        >
+                            
+                            <p style={{fontWeight:'bold',fonSize: 15,letterSpacing: 1.5}}>
+                                Log out
+                            </p>
+                        </Button>
+                    </Box>
+                }
+               
+            </>
+                }
+            </div>
         </nav>
      );
 }
